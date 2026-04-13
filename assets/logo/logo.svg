@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 100" width="320" height="100" role="img" aria-label="PARCO – Parallel Computing Lab">
+  <title>PARCO – Parallel Computing Lab</title>
+
+  <!--
+    LIGHT THEME variant.
+    Grid: 4×4 cells. Cell=14px, gap=3px, origin x=4 y=8.
+    Filled cells (navy #2B4F7E): pattern mirrors the PNG logo.
+    Outline-only cells: light steel stroke, transparent fill.
+  -->
+
+  <!-- ── Pixel grid ── -->
+  <g>
+    <!-- row 0 -->
+    <rect x="4"  y="8"  width="14" height="14" rx="1" fill="none"   stroke="#8AA5C0" stroke-width="1.2"/>
+    <rect x="21" y="8"  width="14" height="14" rx="1" fill="#2B4F7E" stroke="none"/>
+    <rect x="38" y="8"  width="14" height="14" rx="1" fill="#2B4F7E" stroke="none"/>
+    <rect x="55" y="8"  width="14" height="14" rx="1" fill="none"   stroke="#8AA5C0" stroke-width="1.2"/>
+    <!-- row 1 -->
+    <rect x="4"  y="25" width="14" height="14" rx="1" fill="#2B4F7E" stroke="none"/>
+    <rect x="21" y="25" width="14" height="14" rx="1" fill="none"   stroke="#8AA5C0" stroke-width="1.2"/>
+    <rect x="38" y="25" width="14" height="14" rx="1" fill="none"   stroke="#8AA5C0" stroke-width="1.2"/>
+    <rect x="55" y="25" width="14" height="14" rx="1" fill="#2B4F7E" stroke="none"/>
+    <!-- row 2 -->
+    <rect x="4"  y="42" width="14" height="14" rx="1" fill="#2B4F7E" stroke="none"/>
+    <rect x="21" y="42" width="14" height="14" rx="1" fill="none"   stroke="#8AA5C0" stroke-width="1.2"/>
+    <rect x="38" y="42" width="14" height="14" rx="1" fill="none"   stroke="#8AA5C0" stroke-width="1.2"/>
+    <rect x="55" y="42" width="14" height="14" rx="1" fill="#2B4F7E" stroke="none"/>
+    <!-- row 3 -->
+    <rect x="4"  y="59" width="14" height="14" rx="1" fill="none"   stroke="#8AA5C0" stroke-width="1.2"/>
+    <rect x="21" y="59" width="14" height="14" rx="1" fill="#2B4F7E" stroke="none"/>
+    <rect x="38" y="59" width="14" height="14" rx="1" fill="#2B4F7E" stroke="none"/>
+    <rect x="55" y="59" width="14" height="14" rx="1" fill="none"   stroke="#8AA5C0" stroke-width="1.2"/>
+  </g>
+
+  <!-- ── PARCO wordmark ── -->
+  <text
+    x="83" y="68"
+    font-family="'Arial Black', 'Helvetica Neue', Arial, sans-serif"
+    font-size="58"
+    font-weight="900"
+    fill="#1C2F45"
+    letter-spacing="-1"
+  >PARCO</text>
+
+  <!-- thin rule under wordmark -->
+  <rect x="83" y="73" width="232" height="1.5" fill="#2B4F7E" opacity="0.3"/>
+
+  <!-- subtitle -->
+  <text
+    x="85" y="90"
+    font-family="'Helvetica Neue', Arial, sans-serif"
+    font-size="14"
+    font-weight="500"
+    fill="#2B4F7E"
+    letter-spacing="0.3"
+  >Parallel Computing Lab</text>
+</svg>

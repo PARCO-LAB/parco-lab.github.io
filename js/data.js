@@ -1,0 +1,442 @@
+/* ============================================================
+   PARCO Lab — data.js
+   ============================================================ */
+
+const PARCO_DATA = {
+
+  meta: {
+    name:        "PARCO Lab",
+    fullName:    { en: "Parallel Computing Laboratory", it: "Laboratorio di Calcolo Parallelo" },
+    dept:        { en: "DIMI — Department of Engineering for Innovation Medicine", it: "DIMI — Dipartimento di Ingegneria per la Medicina di Innovazione" },
+    univ:        { en: "University of Verona", it: "Università degli Studi di Verona" },
+    address:     "Ca' Vignal 2 · Strada le Grazie 15 · 37134 Verona",
+    phone:       "+39 045 802 7094",
+    email:       "nicola.bombieri@univr.it",
+    officialUrl: "https://www.dimi.univr.it/?ent=grupporic&id=243&lang=it",
+    cspUrl:      "https://www.di.univr.it/?ent=bibliocr&id=236&tipobc=5",
+  },
+
+  stats: [
+    { value: 6,  labelKey: "hero.stat_members" },
+    { value: 7,  labelKey: "hero.stat_servers" },
+    { value: 6, labelKey: "hero.stat_projects" },
+    { value: 1,  labelKey: "hero.stat_spinoffs" },
+  ],
+
+  /* ─── Research areas ─── */
+  research: [
+    {
+      num: "01",
+      title: { en: "Parallel Code for Multi/Many-core", it: "Codice Parallelo Multi/Many-core" },
+      desc:  { en: "Development, analysis, and tuning of parallel code for multi-core CPU and many-core GPU architectures. Optimization targeting performance, power, and energy consumption.",
+               it: "Sviluppo, analisi e tuning di codice parallelo per architetture multi-core CPU e many-core GPU. Ottimizzazione per performance, consumo energetico e power." },
+      tags: ["CUDA","OpenCL","OpenMP","MPI","OpenACC"],
+    },
+    {
+      num: "02",
+      title: { en: "Edge Computing & AI at the Edge", it: "Edge Computing & AI at the Edge" },
+      desc:  { en: "Software optimization for resource-constrained Edge Computing platforms. Distributed artificial intelligence on embedded devices.",
+               it: "Ottimizzazione di applicazioni software per piattaforme resource-constrained nell'Edge Computing. Intelligenza artificiale distribuita su dispositivi embedded." },
+      tags: ["Edge AI","TinyML","IoT","Inference"],
+    },
+    {
+      num: "03",
+      title: { en: "High-Performance Computing", it: "High-Performance Computing" },
+      desc:  { en: "Development and optimization of software for HPC platforms. Unified programming models for high-performance clusters with heterogeneous architectures.",
+               it: "Sviluppo e ottimizzazione di software per piattaforme HPC. Modelli di programmazione unificata per cluster ad alte prestazioni con architetture eterogenee." },
+      tags: ["HPC","Cluster","OpenACC","MPI"],
+    },
+    {
+      num: "04",
+      title: { en: "Embedded & Cyber-Physical Systems", it: "Sistemi Embedded e Cyber-Physical" },
+      desc:  { en: "Automatic HW/SW design for embedded systems modeled at TLM level. RTL-TLM synthesis, device driver generation, multi/many-core software.",
+               it: "Progettazione automatica HW/SW per sistemi embedded modellati a livello TLM. Sintesi RTL-TLM, device driver generation, software multi/many-core." },
+      tags: ["TLM","RTL","CPS","IoT"],
+    },
+    {
+      num: "05",
+      title: { en: "Intelligent Video Analytics", it: "Intelligent Video Analytics" },
+      desc:  { en: "At-the-edge IVA platforms for commercial and biomedical contexts. Hardware acceleration for real-time inference.",
+               it: "Piattaforme at-the-edge per IVA applicate a contesti commerciali e biomedici. Accelerazione hardware per inferenza real-time." },
+      tags: ["IVA","GPU","Vision","Deep Learning"],
+    },
+    {
+      num: "06",
+      title: { en: "Biomedical HPC", it: "HPC Biomedico" },
+      desc:  { en: "High-performance computational models for biomedical information extraction and integration: neuroimaging, oncology, pharmacology.",
+               it: "Modelli computazionali ad alte prestazioni per estrazione e integrazione di informazioni biomediche: neuroimaging, oncologia, farmacologia." },
+      tags: ["Bioinformatics","Neuroimaging","GPU","HPC"],
+    },
+  ],
+
+  /* ─── Projects ─── */
+  projects: [
+    { year:"2023", title:{ en:"PREPARE — Personalized Engine for Prostate cancer Evaluation", it:"PREPARE — Personalized Engine for Prostate cancer Evaluation" }, funder:"DIMI — University of Verona", type:"medical" },
+    { year:"2022", title:{ en:"ADAPT — Automated quantitative assessment in Telemedicine of Postural Abnormalities in Parkinson's disease", it:"ADAPT — Valutazione quantitativa automatizzata in Telemedicina delle Anomalie Posturali nel Parkinson" }, funder:"DIMI — Competitive funding", type:"medical" },
+    { year:"2022", title:{ en:"At-the-edge Intelligent Video Analytics platform for restaurant services", it:"Piattaforma at-the-edge di Intelligent Video Analytics per attività commerciali con servizio al tavolo" }, funder:{ en:"Industrial contract", it:"Contratto industriale" }, type:"industry" },
+    { year:"2021", title:{ en:"OPERA 4.0 — Observation of business processes with privacy protection for Industry 4.0", it:"OPERA 4.0 — Osservazione di processi aziendali con garanzie di privacy per Industry 4.0" }, funder:"Fondazione Cariverona", type:"industry" },
+    { year:"2019", title:{ en:"DigitalRestaurant — Platform for smart management of restaurant services", it:"DigitalRestaurant — Piattaforma per la gestione intelligente di servizi ristorativi" }, funder:"Digital Restaurant Srl · 16 months", type:"industry" },
+    { year:"2019", title:{ en:"Model-Based Design and Verification Flow for Embedded Vision Applications", it:"Flusso Model-Based per Progettazione e Verifica di Applicazioni di Visione Embedded" }, funder:"INdAM · Feb 2019", type:"academic" },
+  ],
+
+  /* ─── Publications ─── */
+  publications: [
+  {
+    year: "2025",
+    title: "A markerless platform for automatic assessment of gait based on Human Pose Estimation: A proof of concept",
+    authors: "M. Boldo, R. Di Marco, S. Aldegheri, E. Martini, M. Cosma, A. Baricich, G. Gasperini, A. Picelli, N. Smania, N. Bombieri",
+    venue: "Biomedical Signal Processing and Control, vol. 112, p. 108453",
+    type: "journal",
+  },
+  {
+    year: "2025",
+    title: "Denoising and completion filters for human motion software: A survey with code",
+    authors: "E. Martini, A. Calanca, N. Bombieri",
+    venue: "Computer Science Review, vol. 58, p. 100780",
+    type: "journal",
+  },
+  {
+    year: "2025",
+    title: "An efficient solution for GPUs to the ST-connectivity problem on dynamic graphs",
+    authors: "L. Fraccaroli, F. Busato, R. Giugno, N. Bombieri",
+    venue: "Pattern Recognition Letters, vol. 191, pp. 110–116",
+    type: "journal",
+  },
+  {
+    year: "2025",
+    title: "OLORAS: Online LOng Range Action Segmentation for Edge Devices",
+    authors: "F. Ziche, N. Bombieri",
+    venue: "Design, Automation & Test in Europe (DATE 2025), Lyon, France",
+    type: "conference",
+  },
+  {
+    year: "2025",
+    title: "A Deep Learning-Based Emotion Recognition Pipeline for Public Speaking Anxiety Detection in Social Robotics",
+    authors: "M. Boldo, D. Forghani, N. Bombieri, K. Dautenhahn, C.L. Nehaniv",
+    venue: "IEEE International Conference on Robot and Human Interactive Communication (RO-MAN 2025)",
+    type: "conference",
+  },
+  {
+    year: "2025",
+    title: "COMETH: Convex Optimization for Multiview Estimation and Tracking of Humans",
+    authors: "E. Martini, H.J. Choi, N. Figueroa, N. Bombieri",
+    venue: "arXiv preprint, abs/2508.20920",
+    type: "workshop",
+  },
+  {
+    year: "2024",
+    title: "Enhancing Safety and Privacy in Industry 4.0: The ICE Laboratory Case Study",
+    authors: "F. Cunico, S. Aldegheri, A. Avogaro, M. Boldo, N. Bombieri, et al.",
+    venue: "IEEE Access, vol. 12, pp. 154570–154599",
+    type: "journal",
+  },
+  {
+    year: "2024",
+    title: "On the reliability of single-camera markerless systems for overground gait monitoring",
+    authors: "M. Boldo, R. Di Marco, E. Martini, M. Nardon, M. Bertucco, N. Bombieri",
+    venue: "Computers in Biology and Medicine, vol. 171, p. 108101",
+    type: "journal",
+  },
+  {
+    year: "2024",
+    title: "Real-time multi-camera 3D human pose estimation at the edge for industrial applications",
+    authors: "M. Boldo, M. De Marchi, E. Martini, S. Aldegheri, D. Quaglia, F. Fummi, N. Bombieri",
+    venue: "Expert Systems with Applications, vol. 252, p. 124089",
+    type: "journal",
+  },
+  {
+    year: "2024",
+    title: "FLK: A filter with learned kinematics for real-time 3D human pose estimation",
+    authors: "E. Martini, M. Boldo, N. Bombieri",
+    venue: "Signal Processing, vol. 224, p. 109598",
+    type: "journal",
+  },
+  {
+    year: "2024",
+    title: "Domain-Adaptive Online Active Learning for Real-Time Intelligent Video Analytics on Edge Devices",
+    authors: "M. Boldo, M. De Marchi, E. Martini, S. Aldegheri, N. Bombieri",
+    venue: "IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems, vol. 43, no. 11, pp. 4105–4116",
+    type: "journal",
+  },
+  {
+    year: "2024",
+    title: "A Design Flow Based on Docker and Kubernetes for ROS-based Robotic Software Applications",
+    authors: "F. Lumpp, M. Panato, N. Bombieri, F. Fummi",
+    venue: "ACM Transactions on Embedded Computing Systems, vol. 23, no. 5, pp. 74:1–74:24",
+    type: "journal",
+  },
+  {
+    year: "2024",
+    title: "Enabling Kubernetes Orchestration of Mixed-Criticality Software for Autonomous Mobile Robots",
+    authors: "F. Lumpp, F. Fummi, H.D. Patel, N. Bombieri",
+    venue: "IEEE Transactions on Robotics, vol. 40, pp. 540–553",
+    type: "journal",
+  },
+  {
+    year: "2024",
+    title: "GPU-Accelerated BFS for Dynamic Networks",
+    authors: "F. Ziche, N. Bombieri, F. Busato, R. Giugno",
+    venue: "Euro-Par 2024: Parallel Processing, Lecture Notes in Computer Science, vol. 3, pp. 74–87",
+    type: "conference",
+  },
+  {
+    year: "2024",
+    title: "A Real-time Filter for Human Pose Estimation based on Denoising Diffusion Models for Edge Devices",
+    authors: "C. Bozzini, M. Boldo, E. Martini, N. Bombieri",
+    venue: "IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS 2024), pp. 10864–10869",
+    type: "conference",
+  },
+  {
+    year: "2024",
+    title: "A Verification Platform for Human Pose Estimation Models",
+    authors: "S. Aldegheri, M. Boldo, C. Bozzini, M. De Marchi, R. Di Marco, E. Martini, N. Bombieri",
+    venue: "IEEE Latin America Test Symposium (LATS 2024)",
+    type: "conference",
+  },
+  {
+    year: "2024",
+    title: "A Robust Filter for Marker-less Multi-person Tracking in Human-Robot Interaction Scenarios",
+    authors: "E. Martini, H. Parekh, S. Peng, N. Bombieri, N. Figueroa",
+    venue: "IEEE International Conference on Robot and Human Interactive Communication (RO-MAN 2024), pp. 424–429",
+    type: "conference",
+  },
+  {
+    year: "2024",
+    title: "Real-Time Multi-Person Identification and Tracking via HPE and IMU Data Fusion",
+    authors: "M. De Marchi, C. Turetta, G. Pravadelli, N. Bombieri",
+    venue: "Design, Automation & Test in Europe (DATE 2024)",
+    type: "conference",
+  },
+  {
+    year: "2024",
+    title: "Orchestration-Aware Optimization of ROS2 Communication Protocols",
+    authors: "M. De Marchi, N. Bombieri",
+    venue: "Design, Automation & Test in Europe (DATE 2024)",
+    type: "conference",
+  },
+  {
+    year: "2024",
+    title: "Optimizing Kubernetes Deployment of Robotic Applications with HEFT-based Container Orchestration",
+    authors: "F. Lumpp, F. Fummi, N. Bombieri",
+    venue: "IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS 2024), pp. 4594–4599",
+    type: "conference",
+  },
+  {
+    year: "2024",
+    title: "Late Breaking Results: A real-time diffusion-based filter for human pose estimation on edge devices",
+    authors: "C. Bozzini, M. Boldo, E. Martini, N. Bombieri",
+    venue: "ACM/IEEE Design Automation Conference (DAC 2024), pp. 338:1–338:2",
+    type: "workshop",
+  },
+  {
+    year: "2024",
+    title: "Late Breaking Results: Evaluation of Human Action Quality with Linear Recurrent Units and Graph Attention Networks on Embedded Systems",
+    authors: "F. Ziche, N. Bombieri",
+    venue: "ACM/IEEE Design Automation Conference (DAC 2024), pp. 357:1–357:2",
+    type: "workshop",
+  },
+  {
+    year: "2024",
+    title: "Automating FinOps in Cloud Computing: An Integrated Solution for Efficient Data Collection with Dynamic Scraper Generation",
+    authors: "F. Lumpp, D. Braga, F. Fummi, N. Bombieri",
+    venue: "IEEE International Conference on Cloud Computing Technology and Science (CloudCom 2024), pp. 79–86",
+    type: "conference",
+  },
+  {
+    year: "2023",
+    title: "Camera- and Viewpoint-Agnostic Evaluation of Axial Postural Abnormalities in People with Parkinson's Disease through Augmented Human Pose Estimation",
+    authors: "S. Aldegheri, C.A. Artusi, S. Camozzi, R. Di Marco, C. Geroin, G. Imbalzano, L. Lopiano, M. Tinazzi, N. Bombieri",
+    venue: "Sensors, vol. 23, no. 6, p. 3193",
+    type: "journal",
+  },
+  {
+    year: "2023",
+    title: "On the Query Strategies for Efficient Online Active Distillation",
+    authors: "M. Boldo, E. Martini, M. De Marchi, S. Aldegheri, N. Bombieri",
+    venue: "arXiv preprint, abs/2309.01612",
+    type: "workshop",
+  },
+  {
+    year: "2023",
+    title: "A Dynamic and Collaborative Deep Inference Framework for Human Motion Analysis in Telemedicine",
+    authors: "M. Boldo, D. Carra, D. Quaglia, N. Bombieri",
+    venue: "IEEE International Conference on Edge Computing and Communications (EDGE 2023), pp. 221–226",
+    type: "conference",
+  },
+  {
+    year: "2023",
+    title: "FAST-CON: a Multi-source Approach for Efficient S-T Connectivity on Sparse Graphs",
+    authors: "L. Fraccaroli, R. Giugno, S. Cancellieri, F. Busato, N. Bombieri",
+    venue: "IEEE High Performance Extreme Computing Conference (HPEC 2023)",
+    type: "conference",
+  },
+  {
+    year: "2023",
+    title: "On the Containerization and Orchestration of RISC-V architectures for Edge-Cloud computing",
+    authors: "F. Lumpp, F. Barchi, A. Acquaviva, N. Bombieri",
+    venue: "IEEE International Symposium on Industrial Embedded Systems (SIES 2023)",
+    type: "conference",
+  },
+  {
+    year: "2022",
+    title: "Enabling Gait Analysis in the Telemedicine Practice through Portable and Accurate 3D Human Pose Estimation",
+    authors: "E. Martini, M. Boldo, S. Aldegheri, N. Valè, M. Filippetti, N. Smania, M. Bertucco, A. Picelli, N. Bombieri",
+    venue: "Computer Methods and Programs in Biomedicine, vol. 225, p. 107016",
+    type: "journal",
+  },
+  {
+    year: "2022",
+    title: "Real-time Human Pose Estimation at the Edge for Gait Analysis at a Distance",
+    authors: "E. Martini, M. Boldo, S. Aldegheri, M. De Marchi, N. Valè, M. Filippetti, N. Smania, M. Bertucco, A. Picelli, N. Bombieri",
+    venue: "18th International Conference on Distributed Computing in Sensor Systems (DCOSS 2022), pp. 45–48",
+    type: "conference",
+  },
+  {
+    year: "2022",
+    title: "Preserving Data Privacy and Accuracy of Human Pose Estimation Software Based on CNNs for Remote Gait Analysis",
+    authors: "E. Martini, M. Boldo, S. Aldegheri, N. Valè, M. Filippetti, N. Smania, M. Bertucco, A. Picelli, N. Bombieri",
+    venue: "IEEE Engineering in Medicine & Biology Society (EMBC 2022), pp. 3468–3471",
+    type: "conference",
+  },
+  {
+    year: "2022",
+    title: "On the Pose Estimation Software for Measuring Movement Features in the Finger-to-Nose Test",
+    authors: "E. Martini, N. Valè, M. Boldo, A. Righetti, N. Smania, N. Bombieri",
+    venue: "IEEE International Conference on Digital Health (ICDH 2022), pp. 77–86",
+    type: "conference",
+  },
+  {
+    year: "2022",
+    title: "Containerization and Orchestration of Software for Autonomous Mobile Robots: a Case Study of Mixed-Criticality Tasks across Edge-Cloud Computing Platforms",
+    authors: "F. Lumpp, F. Fummi, H.D. Patel, N. Bombieri",
+    venue: "IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS 2022), pp. 9708–9713",
+    type: "conference",
+  },
+  {
+    year: "2022",
+    title: "Process-driven Collision Prediction in Human-Robot Work Environments",
+    authors: "L. Geretti, S. Centomo, M. Boldo, E. Martini, N. Bombieri, D. Quaglia, T. Villa",
+    venue: "IEEE International Conference on Emerging Technologies and Factory Automation (ETFA 2022)",
+    type: "conference",
+  },
+  {
+    year: "2022",
+    title: "Risk Assessment and Prediction in Human-Robot Interaction Through Assertion Mining and Pose Estimation",
+    authors: "M. Boldo, N. Bombieri, M. De Marchi, L. Geretti, S. Germiniani, G. Pravadelli",
+    venue: "IEEE Latin America Test Symposium (LATS 2022)",
+    type: "conference",
+  },
+  {
+    year: "2022",
+    title: "Integrating Wearable and Camera-Based Monitoring in the Digital Twin for Safety Assessment in Industry 4.0",
+    authors: "M. Boldo, N. Bombieri, S. Centomo, M. De Marchi, F. Demrozi, G. Pravadelli, D. Quaglia, C. Turetta",
+    venue: "International Symposium on Leveraging Applications of Formal Methods (ISoLA 2022)",
+    type: "conference",
+  },
+  {
+    year: "2020",
+    title: "Mangrove: An Inference-Based Dynamic Invariant Mining for GPU Architectures",
+    authors: "N. Bombieri, F. Busato, A. Danese, L. Piccolboni, G. Pravadelli",
+    venue: "IEEE Transactions on Computers, vol. 69, no. 4, pp. 606–620",
+    type: "journal",
+  },
+  {
+    year: "2019",
+    title: "Configuring Graph Traversal Applications for GPUs: Analysis of Implementation Strategies and their Correlation with Graph Characteristics",
+    authors: "F. Busato, N. Bombieri",
+    venue: "International Conference on High Performance Computing & Simulation (HPCS 2019), pp. 145–151",
+    type: "conference",
+  },
+],
+  /* ─── People ───
+  ─── */
+  people: {
+    professors: [
+      {
+        initials: "NB",
+        name:  "Nicola Bombieri",
+        role:  { en: "Director · Full Professor", it: "Direttore · Professore Ordinario" },
+        dept:  "DIMI",
+        area:  { en: "Parallel architectures · AI at the Edge · Embedded Systems · HPC",
+                 it: "Architetture parallele · AI at the Edge · Sistemi Embedded · HPC" },
+        office:"Ca' Vignal 2, room 1.49 · +39 045 802 7094",
+        url:   "https://www.dimi.univr.it/?ent=persona&id=2220&lang=en",
+        photo: null,
+        photoAlt: null,
+      }
+    ],
+    staff: [
+      {
+        initials: "MB",
+        name:  "Michele Boldo",
+        role:  { en: "Adjunct Professor", it: "Professore a Contratto" },
+        dept:  "DIMI",
+        area:  { en: "Edge AI · Embedded Vision · Parallel Programming",
+                 it: "Edge AI · Visione Embedded · Programmazione Parallela" },
+        url:   "https://www.dimi.univr.it/?ent=persona&id=47626&lang=en",
+        photo: null,
+        photoAlt: { en: "Michele Boldo", it: "Michele Boldo" },
+      },
+      {
+        initials: "EM",
+        name:  "Enrico Martini",
+        role:  { en: "Adjunct Professor", it: "Professore a Contratto" },
+        dept:  "DIMI",
+        area:  { en: "Embedded System Design · Hardware/Software Co-synthesis",
+                 it: "Progettazione Sistemi Embedded · Co-sintesi HW/SW" },
+        url:   "https://www.dimi.univr.it/?ent=persona&id=47640&lang=en",
+        photo: null,
+        photoAlt: null,
+      },
+      {
+        initials: "SA",
+        name:  "Stefano Aldegheri",
+        role:  { en: "Lab Technician", it: "Tecnico di Laboratorio" },
+        dept:  "DIMI",
+        area:  { en: "HW/SW Infrastructure · CUDA Development · Linux Systems",
+                 it: "Infrastruttura HW/SW · Sviluppo CUDA · Sistemi Linux" },
+        url:   "https://www.dimi.univr.it/?ent=persona&id=20201&lang=en",
+        photo: null,
+        photoAlt: { en: "Stefano Aldegheri", it: "Stefano Aldegheri" },
+      },
+    ],
+    phd: [
+      {
+        initials: "FZ",
+        name:  "Filippo Ziche",
+        role:  { en: "PhD Student", it: "Dottorando" },
+        dept:  "DIMI",
+        area:  { en: "Edge AI · On-device inference for medical IoT",
+                 it: "Edge AI · Inferenza on-device per IoT medicale" },
+        url:   "https://www.dimi.univr.it",
+        photo: null,
+        photoAlt: null,
+      },
+      {
+        initials: "FP",
+        name:  "Ferdinando Pompanin",
+        role:  { en: "PhD Student", it: "Dottorando" },
+        dept:  "DIMI",
+        area:  { en: "Sensor Fusion · Human pose estimation",
+                 it: "Sensor Fusion · Stima della posa umana" },
+        url:   "https://www.dimi.univr.it",
+        photo: null,
+        photoAlt: null,
+      },
+    ],
+  },
+
+  /* ─── Spin-offs ─── */
+  spinoffs: [
+    // { code:"HPA", name:"HPA s.r.l.", founded:"Spin-off UniVR · Computer Science Park", desc:{ en:"High-Performance Applications: high-performance software solutions derived from parallel computing research.", it:"High-Performance Applications: soluzioni software ad alte prestazioni derivate dalla ricerca sul calcolo parallelo." }, url:"https://www.di.univr.it/?ent=bibliocr&id=326&tipobc=8&lang=it" },
+    { code:"TSP", name:"The Safe Place s.r.l.", founded:"Spin-off UniVR", desc:{ en:"", it:"" }, url:""},
+  ],
+};
+
+/* Helper: get bilingual string */
+function bl(field) {
+  const lang = I18N.getLang();
+  if (typeof field === "string") return field;
+  if (typeof field === "object" && field !== null) return field[lang] || field.en || "";
+  return "";
+}

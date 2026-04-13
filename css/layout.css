@@ -1,0 +1,130 @@
+/* ============================================================
+   PARCO Lab — layout.css
+   Hero · Sections · About strip · Responsive
+   ============================================================ */
+
+body { padding-top: var(--space-nav); }
+
+/* ═══════════════════════
+   HERO
+   ═══════════════════════ */
+#section-home {
+  min-height: calc(100svh - var(--space-nav));
+  background: var(--hero-gradient);
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  text-align: center;
+  padding: clamp(60px,8vw,120px) var(--section-h);
+  position: relative; overflow: hidden;
+  transition: background 0.3s var(--ease-apple);
+}
+#section-home::before {
+  content: '';
+  position: absolute; top: 40%; left: 50%;
+  transform: translate(-50%,-50%);
+  width: min(800px,90vw); height: min(800px,90vh);
+  background: radial-gradient(ellipse at center, rgba(0,113,227,0.06) 0%, transparent 65%);
+  pointer-events: none;
+}
+[data-theme="dark"] #section-home::before {
+  background: radial-gradient(ellipse at center, rgba(41,151,255,0.08) 0%, transparent 65%);
+}
+
+.hero-eyebrow {
+  font-size: var(--text-caption); font-weight: 600;
+  letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent);
+  margin-bottom: 16px; display: flex; align-items: center; justify-content: center; gap: 8px;
+  animation: heroFadeUp var(--dur-slow) var(--ease-apple) 0.1s both;
+}
+.hero-eyebrow-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+
+.hero-title {
+  font-size: var(--text-hero); font-weight: 700;
+  letter-spacing: -0.015em; line-height: 1.04;
+  color: var(--text-primary); margin-bottom: 20px;
+  animation: heroFadeUp var(--dur-slow) var(--ease-apple) 0.2s both;
+}
+.hero-title-accent { color: var(--accent); }
+
+.hero-subtitle {
+  font-size: clamp(19px,2.2vw,28px); font-weight: 400;
+  line-height: 1.35; color: var(--text-secondary);
+  max-width: 600px; margin: 0 auto 36px;
+  animation: heroFadeUp var(--dur-slow) var(--ease-apple) 0.3s both;
+}
+
+.hero-ctas {
+  display: flex; align-items: center; justify-content: center;
+  gap: 20px; flex-wrap: wrap;
+  animation: heroFadeUp var(--dur-slow) var(--ease-apple) 0.4s both;
+}
+
+.hero-stats {
+  margin-top: clamp(48px,7vw,96px);
+  display: flex; gap: clamp(32px,5vw,80px);
+  justify-content: center; flex-wrap: wrap;
+  animation: heroFadeUp var(--dur-slow) var(--ease-apple) 0.5s both;
+}
+.hero-stat { text-align: center; }
+.hero-stat-num {
+  font-size: clamp(36px,4.5vw,56px); font-weight: 700;
+  letter-spacing: -0.025em; color: var(--text-primary); line-height: 1;
+}
+.hero-stat-label { font-size: var(--text-callout); color: var(--text-secondary); margin-top: 6px; }
+
+.scroll-hint {
+  position: absolute; bottom: 28px; left: 50%; transform: translateX(-50%);
+  display: flex; flex-direction: column; align-items: center; gap: 6px;
+  animation: heroFadeUp 0.8s var(--ease-apple) 1s both;
+}
+.scroll-hint-text  { font-size: 11px; color: var(--text-tertiary); letter-spacing: 0.04em; text-transform: uppercase; }
+.scroll-hint-arrow {
+  width: 16px; height: 16px;
+  border-right: 1.5px solid var(--text-tertiary); border-bottom: 1.5px solid var(--text-tertiary);
+  transform: rotate(45deg); animation: bounce 1.8s ease-in-out infinite;
+}
+@keyframes bounce { 0%,100%{transform:rotate(45deg) translateY(0)} 50%{transform:rotate(45deg) translateY(4px)} }
+@keyframes heroFadeUp { from{opacity:0;transform:translateY(24px)} to{opacity:1;transform:none} }
+
+/* ═══════════════════════
+   ABOUT STRIP
+   ═══════════════════════ */
+.about-strip {
+  display: grid; grid-template-columns: repeat(3,1fr);
+  border-top: 1px solid var(--divider); border-bottom: 1px solid var(--divider);
+  background: var(--bg-primary); transition: background 0.3s var(--ease-apple);
+}
+.about-cell { padding: clamp(28px,4vw,48px) clamp(20px,3vw,40px); border-right: 1px solid var(--divider); }
+.about-cell:last-child { border-right: none; }
+.about-cell-label { font-size: var(--text-caption); font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; }
+.about-cell-text  { font-size: var(--text-callout); line-height: 1.55; color: var(--text-secondary); }
+
+/* ═══════════════════════
+   SECTION WRAPPERS
+   ═══════════════════════ */
+.section-inner { padding: var(--section-v) var(--section-h); }
+
+#section-ricerca       { background: var(--bg-secondary); transition: background 0.3s var(--ease-apple); }
+#section-progetti      { background: var(--bg-primary);   transition: background 0.3s var(--ease-apple); }
+#section-pubblicazioni { background: var(--bg-secondary); transition: background 0.3s var(--ease-apple); }
+#section-persone       { background: var(--bg-primary);   transition: background 0.3s var(--ease-apple); }
+#section-spinoff       { background: var(--bg-secondary); transition: background 0.3s var(--ease-apple); }
+
+/* ═══════════════════════
+   RESPONSIVE
+   ═══════════════════════ */
+@media (max-width: 768px) {
+  .about-strip { grid-template-columns: 1fr; }
+  .about-cell  { border-right: none; border-bottom: 1px solid var(--divider); }
+  .about-cell:last-child { border-bottom: none; }
+  .hero-stats  { gap: 24px; }
+  footer       { padding: 48px 20px 24px; }
+  .footer-top  { grid-template-columns: 1fr 1fr; gap: 32px; }
+}
+@media (max-width: 480px) {
+  .footer-top { grid-template-columns: 1fr; }
+  .hero-ctas  { flex-direction: column; align-items: center; gap: 12px; }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  .footer-top { grid-template-columns: 1fr 1fr; }
+}

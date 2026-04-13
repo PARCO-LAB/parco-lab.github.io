@@ -1,0 +1,103 @@
+/* ============================================================
+   PARCO Lab
+   Design Tokens & Theme Variables
+   ============================================================ */
+
+[data-theme="light"] {
+  --bg-primary:    #FFFFFF;
+  --bg-secondary:  #F5F5F7;
+  --bg-tertiary:   #E8E8ED;
+  --bg-nav:        rgba(255, 255, 255, 0.80);
+  --bg-card:       #F5F5F7;
+  --bg-card-hover: #EBEBF0;
+
+  --text-primary:   #1D1D1F;
+  --text-secondary: #6E6E73;
+  --text-tertiary:  #AEAEB2;
+  --text-link:      #0071E3;
+  --text-link-hover:#0077ED;
+
+  --accent:         #0071E3;
+  --accent-hover:   #0077ED;
+
+  --border:         rgba(0, 0, 0, 0.08);
+  --border-strong:  rgba(0, 0, 0, 0.16);
+  --divider:        rgba(0, 0, 0, 0.08);
+
+  --shadow-xs: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.08), 0 1px 3px rgba(0,0,0,0.05);
+  --shadow-md: 0 4px 24px rgba(0,0,0,0.08), 0 1px 4px rgba(0,0,0,0.04);
+  --shadow-lg: 0 12px 48px rgba(0,0,0,0.10), 0 2px 8px rgba(0,0,0,0.05);
+
+  --hero-gradient: linear-gradient(180deg, #FBFBFD 0%, #F5F5F7 100%);
+  --section-alt:   #F5F5F7;
+
+  --avatar-bg:     #E8E8ED;
+  --avatar-text:   #1D1D1F;
+}
+
+[data-theme="dark"] {
+  --bg-primary:    #000000;
+  --bg-secondary:  #1C1C1E;
+  --bg-tertiary:   #2C2C2E;
+  --bg-nav:        rgba(0, 0, 0, 0.80);
+  --bg-card:       #1C1C1E;
+  --bg-card-hover: #2C2C2E;
+
+  --text-primary:   #F5F5F7;
+  --text-secondary: #A1A1A6;
+  --text-tertiary:  #636366;
+  --text-link:      #2997FF;
+  --text-link-hover:#409CFF;
+
+  --accent:         #2997FF;
+  --accent-hover:   #409CFF;
+
+  --border:         rgba(255, 255, 255, 0.08);
+  --border-strong:  rgba(255, 255, 255, 0.16);
+  --divider:        rgba(255, 255, 255, 0.08);
+
+  --shadow-xs: 0 1px 3px rgba(0,0,0,0.3);
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.4);
+  --shadow-md: 0 4px 24px rgba(0,0,0,0.5);
+  --shadow-lg: 0 12px 48px rgba(0,0,0,0.6);
+
+  --hero-gradient: linear-gradient(180deg, #000000 0%, #0A0A0A 100%);
+  --section-alt:   #1C1C1E;
+
+  --avatar-bg:     #2C2C2E;
+  --avatar-text:   #F5F5F7;
+}
+
+:root {
+  --font-system: -apple-system, BlinkMacSystemFont, "SF Pro Display",
+                 "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+
+  --text-hero:     clamp(48px, 7vw, 96px);
+  --text-hero-sub: clamp(28px, 3.5vw, 48px);
+  --text-headline: clamp(24px, 2.5vw, 32px);
+  --text-title:    21px;
+  --text-body:     17px;
+  --text-callout:  15px;
+  --text-caption:  12px;
+  --text-nav:      12px;
+
+  --space-nav:   44px;
+  --section-v:   clamp(64px, 8vw, 120px);
+  --section-h:   clamp(20px, 5vw, 80px);
+  --max-w:       980px;
+  --max-w-wide:  1200px;
+  --max-w-text:  660px;
+
+  --r-sm:  10px;
+  --r-md:  18px;
+  --r-lg:  20px;
+  --r-xl:  24px;
+  --r-2xl: 28px;
+
+  --ease-apple:  cubic-bezier(0.25, 0.1, 0.25, 1);
+  --ease-spring: cubic-bezier(0.34, 1.3, 0.64, 1);
+  --dur-fast:    0.2s;
+  --dur-med:     0.4s;
+  --dur-slow:    0.6s;
+}

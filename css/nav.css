@@ -1,0 +1,189 @@
+/* ============================================================
+   PARCO Lab — nav.css
+   Frosted glass nav · Language switcher · Theme toggle
+   ============================================================ */
+
+/* ── Fixed top nav ── */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0;
+  height: var(--space-nav); z-index: 1000;
+  background: var(--bg-nav);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border-bottom: 1px solid var(--divider);
+  transition: background 0.3s var(--ease-apple), border-color 0.3s var(--ease-apple);
+}
+
+.nav-inner {
+  max-width: var(--max-w-wide); margin: 0 auto;
+  height: 100%; display: flex; align-items: center;
+  padding: 0 clamp(16px,3vw,44px); gap: 0;
+}
+
+/* ── Logo ── */
+.nav-logo {
+  display: flex; align-items: center;
+  text-decoration: none; flex-shrink: 0; margin-right: 24px;
+  height: 36px;
+}
+/* Constrain by height, let width scale naturally with SVG aspect ratio */
+.nav-logo-img-light,
+.nav-logo-img-dark {
+  height: 36px;
+  width: auto;
+}
+/* Light logo shown in light theme, dark logo in dark theme */
+.nav-logo-img-light { display: block; }
+.nav-logo-img-dark  { display: none;  }
+[data-theme="dark"] .nav-logo-img-light { display: none; }
+[data-theme="dark"] .nav-logo-img-dark  { display: block; }
+
+/* ── Desktop links ── */
+.nav-links {
+  flex: 1; display: flex; align-items: center;
+  justify-content: center; gap: 0; list-style: none;
+}
+.nav-links a {
+  font-size: var(--text-nav); font-weight: 400;
+  color: var(--text-primary); text-decoration: none;
+  padding: 0 11px; height: var(--space-nav);
+  display: flex; align-items: center;
+  opacity: 0.8; white-space: nowrap;
+  transition: opacity var(--dur-fast) var(--ease-apple);
+}
+.nav-links a:hover  { opacity: 1; }
+.nav-links a.active { opacity: 1; font-weight: 600; }
+
+/* ── Nav right controls ── */
+.nav-right {
+  display: flex; align-items: center; gap: 12px; flex-shrink: 0;
+}
+
+/* ── Language switcher ── */
+.lang-switcher {
+  display: flex; align-items: center;
+  background: var(--bg-tertiary);
+  border-radius: 980px;
+  padding: 3px;
+  gap: 2px;
+}
+.lang-btn {
+  font-family: var(--font-system);
+  font-size: 11px; font-weight: 600;
+  letter-spacing: 0.03em;
+  padding: 3px 9px; border-radius: 980px;
+  border: none; cursor: pointer;
+  background: transparent; color: var(--text-secondary);
+  transition: background var(--dur-fast) var(--ease-apple),
+              color var(--dur-fast) var(--ease-apple),
+              box-shadow var(--dur-fast) var(--ease-apple);
+  -webkit-font-smoothing: antialiased;
+}
+.lang-btn.active {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  box-shadow: var(--shadow-xs);
+}
+.lang-btn:hover:not(.active) { color: var(--text-primary); }
+
+/* ── Theme toggle ── */
+.theme-toggle {
+  width: 32px; height: 20px;
+  background: var(--bg-tertiary); border-radius: 10px;
+  border: none; cursor: pointer; position: relative; padding: 0;
+  transition: background var(--dur-fast) var(--ease-apple);
+  flex-shrink: 0;
+}
+.theme-toggle::after {
+  content: '';
+  position: absolute; top: 2px; left: 2px;
+  width: 16px; height: 16px; border-radius: 50%;
+  background: var(--bg-primary); box-shadow: var(--shadow-xs);
+  transition: left var(--dur-med) var(--ease-spring),
+              background var(--dur-fast) var(--ease-apple);
+}
+[data-theme="dark"] .theme-toggle           { background: #636366; }
+[data-theme="dark"] .theme-toggle::after    { left: 14px; background: #FFF; }
+
+/* ── CTA ── */
+.nav-cta {
+  font-size: var(--text-caption); color: var(--accent);
+  text-decoration: none; white-space: nowrap;
+  transition: color var(--dur-fast) var(--ease-apple);
+}
+.nav-cta:hover { color: var(--accent-hover); }
+
+/* ── Hamburger ── */
+.hamburger {
+  display: none; flex-direction: column; gap: 5px;
+  cursor: pointer; background: none; border: none; padding: 6px;
+}
+.hamburger span {
+  display: block; width: 18px; height: 1.5px;
+  background: var(--text-primary); border-radius: 2px;
+  transition: transform 0.25s var(--ease-apple), opacity 0.2s var(--ease-apple);
+}
+.hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+/* ── Mobile menu ── */
+.mobile-menu {
+  display: none; position: fixed;
+  top: var(--space-nav); left: 0; right: 0; bottom: 0;
+  background: var(--bg-nav);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  z-index: 999; flex-direction: column;
+  padding: 20px clamp(20px,5vw,44px);
+  border-top: 1px solid var(--divider); overflow-y: auto;
+}
+.mobile-menu.open { display: flex; }
+
+/* Mobile lang switcher (larger) */
+.mobile-lang {
+  display: flex; gap: 8px; margin-bottom: 20px;
+}
+.mobile-lang .lang-btn {
+  font-size: 13px; padding: 6px 18px;
+  border-radius: 980px;
+  border: 1px solid var(--divider);
+  background: var(--bg-card); color: var(--text-secondary);
+}
+.mobile-lang .lang-btn.active {
+  background: var(--accent); color: #FFF; border-color: var(--accent);
+  box-shadow: none;
+}
+
+.mobile-menu-link {
+  font-size: clamp(22px,4vw,28px); font-weight: 700; letter-spacing: -0.01em;
+  color: var(--text-primary); text-decoration: none;
+  padding: 14px 0; border-bottom: 1px solid var(--divider);
+  display: flex; align-items: center; justify-content: space-between;
+  transition: color var(--dur-fast) var(--ease-apple);
+}
+.mobile-menu-link::after { content: '›'; font-size: 0.8em; color: var(--text-tertiary); }
+.mobile-menu-link:hover, .mobile-menu-link.active { color: var(--accent); }
+
+.mobile-menu-footer {
+  margin-top: auto; padding-top: 24px;
+  font-size: var(--text-caption); color: var(--text-tertiary);
+  display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 860px) {
+  .nav-links { display: none; }
+  .nav-cta   { display: none; }
+  .hamburger { display: flex; }
+}
+@media (min-width: 861px) {
+  .hamburger    { display: none !important; }
+  .mobile-menu  { display: none !important; }
+}
+@media (max-width: 600px) {
+  .lang-switcher { display: none; } /* shown only in mobile menu */
+}
+@media (min-width: 601px) {
+  .mobile-lang { display: none; }
+}

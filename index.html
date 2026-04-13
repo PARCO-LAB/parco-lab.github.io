@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="PARCO Lab — Parallel Computing Laboratory. DIMI, University of Verona. Research in GPU computing, Edge AI, and HPC.">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+  <title>PARCO Lab — Parallel Computing · UniVR</title>
+
+  <!-- Preload critical assets -->
+  <link rel="preload" href="assets/logo/logo.svg"      as="image" type="image/svg+xml" media="(prefers-color-scheme: light)">
+  <link rel="preload" href="assets/logo/logo-dark.svg" as="image" type="image/svg+xml" media="(prefers-color-scheme: dark)">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/nav.css">
+  <link rel="stylesheet" href="css/layout.css">
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════
+       NAV — frosted glass
+  ══════════════════════════════════════ -->
+  <nav class="nav" id="main-nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+
+      <!-- Logo: two variants swapped via CSS [data-theme] -->
+      <a class="nav-logo" href="#section-home" aria-label="PARCO Lab — Home">
+        <img
+          class="nav-logo-img-light"
+          src="assets/logo/logo.svg"
+          alt="PARCO Lab"
+          width="160" height="50"
+          loading="eager"
+          decoding="sync"
+        >
+        <img
+          class="nav-logo-img-dark"
+          src="assets/logo/logo-dark.svg"
+          alt="PARCO Lab"
+          width="160" height="50"
+          loading="eager"
+          decoding="sync"
+        >
+      </a>
+
+      <!-- Desktop nav links (text updated by JS via i18n) -->
+      <ul class="nav-links" role="list">
+        <li><a href="#section-home">Home</a></li>
+        <li><a href="#section-ricerca">Research</a></li>
+        <li><a href="#section-progetti">Projects</a></li>
+        <li><a href="#section-pubblicazioni">Publications</a></li>
+        <li><a href="#section-persone">People</a></li>
+        <li><a href="#section-spinoff">Spin-offs</a></li>
+      </ul>
+
+      <!-- Right controls -->
+      <div class="nav-right">
+
+        <!-- Language switcher (desktop) -->
+        <div class="lang-switcher" role="group" aria-label="Language selection">
+          <button class="lang-btn active" data-lang="en" aria-pressed="true"  aria-label="English">EN</button>
+          <button class="lang-btn"        data-lang="it" aria-pressed="false" aria-label="Italiano">IT</button>
+        </div>
+
+        <!-- Theme toggle -->
+        <button class="theme-toggle" aria-label="Toggle dark/light theme"></button>
+
+        <!-- Official page link -->
+        <a class="nav-cta"
+           href="https://github.com/PARCO-LAB"
+           target="_blank" rel="noopener noreferrer">
+          Github page ›
+        </a>
+
+        <!-- Hamburger (mobile only) -->
+        <button class="hamburger" id="hamburger-btn"
+                aria-label="Open menu" aria-expanded="false"
+                aria-controls="mobile-menu">
+          <span></span><span></span><span></span>
+        </button>
+
+      </div>
+    </div>
+  </nav>
+
+  <!-- ══════════════════════════════════════
+       MOBILE MENU
+  ══════════════════════════════════════ -->
+  <div class="mobile-menu" id="mobile-menu"
+       role="dialog" aria-modal="true" aria-label="Navigation menu">
+
+    <!-- Language switcher (mobile, larger) -->
+    <div class="mobile-lang" role="group" aria-label="Language selection">
+      <button class="lang-btn active" data-lang="en" aria-pressed="true"  aria-label="English">EN</button>
+      <button class="lang-btn"        data-lang="it" aria-pressed="false" aria-label="Italiano">IT</button>
+    </div>
+
+    <!-- Nav links (text updated by JS) -->
+    <a class="mobile-menu-link" href="#section-home">Home</a>
+    <a class="mobile-menu-link" href="#section-ricerca">Research</a>
+    <a class="mobile-menu-link" href="#section-progetti">Projects</a>
+    <a class="mobile-menu-link" href="#section-pubblicazioni">Publications</a>
+    <a class="mobile-menu-link" href="#section-persone">People</a>
+    <a class="mobile-menu-link" href="#section-spinoff">Spin-offs</a>
+
+    <div class="mobile-menu-footer">
+      <!-- Theme toggle in mobile menu -->
+      <button class="theme-toggle" aria-label="Toggle theme"
+              style="display:inline-block;vertical-align:middle;margin-right:8px"></button>
+      <span style="font-size:12px;color:var(--text-tertiary)">PARCO Lab · DIMI · UniVR</span>
+    </div>
+  </div>
+
+
+  <!-- ══════════════════════════════════════
+       MAIN CONTENT — single scroll
+  ══════════════════════════════════════ -->
+  <main role="main" id="main-content">
+
+    <!-- Home section (hero + about strip) -->
+    <div id="home-content"></div>
+
+    <!-- All other sections injected by JS -->
+    <div id="ricerca-content"></div>
+    <div id="progetti-content"></div>
+    <div id="pubblicazioni-content"></div>
+    <div id="persone-content"></div>
+    <div id="spinoff-content"></div>
+
+    <footer role="contentinfo"></footer>
+
+  </main>
+
+
+  <!--
+    Scripts loaded in dependency order:
+    1. i18n.js   — translation module (no deps)
+    2. data.js   — lab content (uses I18N.getLang via bl())
+    3. render.js — HTML builders (uses I18N + PARCO_DATA)
+    4. main.js   — orchestrator (uses all above)
+  -->
+  <script src="js/i18n.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/render.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+</html>
