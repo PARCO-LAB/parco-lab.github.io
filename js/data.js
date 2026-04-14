@@ -16,12 +16,15 @@ const PARCO_DATA = {
     cspUrl:      "https://www.di.univr.it/?ent=bibliocr&id=236&tipobc=5",
   },
 
-  stats: [
-    { value: 6,  labelKey: "hero.stat_members" },
+  get stats() {
+  return [
+    { value: this.people.professors.length + this.people.staff.length + this.people.phd.length, labelKey: "hero.stat_members" },
     { value: 7,  labelKey: "hero.stat_servers" },
-    { value: 6, labelKey: "hero.stat_projects" },
-    { value: 1,  labelKey: "hero.stat_spinoffs" },
-  ],
+    { value: this.projects.length,                                                              labelKey: "hero.stat_projects" },
+    { value: this.publications.length,                                                          labelKey: "hero.stat_papers" },
+    { value: this.spinoffs.length,                                                              labelKey: "hero.stat_spinoffs" },
+  ];
+},
 
   /* ─── Research areas ─── */
   research: [
@@ -369,7 +372,7 @@ const PARCO_DATA = {
       {
         initials: "MB",
         name:  "Michele Boldo",
-        role:  { en: "Adjunct Professor", it: "Professore a Contratto" },
+        role:  { en: "Post-Doc", it: "Post-Doc" },
         dept:  "DIMI",
         area:  { en: "Edge AI · Embedded Vision · Parallel Programming",
                  it: "Edge AI · Visione Embedded · Programmazione Parallela" },
@@ -380,7 +383,7 @@ const PARCO_DATA = {
       {
         initials: "EM",
         name:  "Enrico Martini",
-        role:  { en: "Adjunct Professor", it: "Professore a Contratto" },
+        role:  { en: "Post-Doc", it: "Post-Doc" },
         dept:  "DIMI",
         area:  { en: "Embedded System Design · Hardware/Software Co-synthesis",
                  it: "Progettazione Sistemi Embedded · Co-sintesi HW/SW" },
@@ -391,7 +394,7 @@ const PARCO_DATA = {
       {
         initials: "SA",
         name:  "Stefano Aldegheri",
-        role:  { en: "Lab Technician", it: "Tecnico di Laboratorio" },
+        role:  { en: "Post-Doc & Lab Technician", it: " Post-Doc & Tecnico di Laboratorio" },
         dept:  "DIMI",
         area:  { en: "HW/SW Infrastructure · CUDA Development · Linux Systems",
                  it: "Infrastruttura HW/SW · Sviluppo CUDA · Sistemi Linux" },

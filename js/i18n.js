@@ -35,6 +35,7 @@ const I18N = (() => {
         stat_members:   "Team members",
         stat_servers:   "GPU servers",
         stat_projects:  "Projects",
+        stat_papers:    "Publications",
         stat_spinoffs:  "Spin-offs",
       },
 
@@ -80,7 +81,7 @@ const I18N = (() => {
         title:        "People.",
         subtitle:     "PARCO Lab is part of DIMI — Department of Engineering for Innovation Medicine, University of Verona, Ca' Vignal 2.",
         label_prof:   "Faculty & Principal Investigators",
-        label_staff:  "Staff & Technicians",
+        label_staff:  "Post-Docs & Technicians",
         profile_link: "University profile",
         label_phd:    "PhD Students",
       },
@@ -131,6 +132,7 @@ const I18N = (() => {
         stat_members:   "Membri del team",
         stat_servers:   "Server GPU",
         stat_projects:  "Progetti",
+        stat_papers:    "Pubblicazioni",
         stat_spinoffs:  "Spin-off",
       },
 
@@ -171,7 +173,7 @@ const I18N = (() => {
         title:        "Persone.",
         subtitle:     "Il PARCO Lab afferisce al DIMI — Dipartimento di Ingegneria per la Medicina di Innovazione, Università degli Studi di Verona, Ca' Vignal 2.",
         label_prof:   "Docenti & Responsabili",
-        label_staff:  "Staff & Tecnici",
+        label_staff:  "Post-Doc & Tecnici",
         profile_link: "Profilo universitario",
         label_phd:    "Dottorandi",
       },
