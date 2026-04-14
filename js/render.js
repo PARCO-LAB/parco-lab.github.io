@@ -126,7 +126,7 @@ const Render = (() => {
   function renderProgetti(data) {
     const T = I18N.t.bind(I18N);
     const items = data.projects.map(p => `
-      <div class="proj-item reveal" data-type="${esc(p.type)}">
+      <div class="proj-item reveal collapsible-item" data-type="${esc(p.type)}">
         <div class="proj-dot"></div>
         <div class="proj-body">
           <div class="proj-title">${esc(bl(p.title))}</div>
@@ -134,6 +134,9 @@ const Render = (() => {
         </div>
         <div class="proj-year">${esc(p.year)}</div>
       </div>`).join('');
+
+    const total = data.projects.length;
+    const showToggle = total > 5;
 
     return `
       <section id="section-progetti">
@@ -149,7 +152,12 @@ const Render = (() => {
             <button class="filter-btn" data-filter="industry">${esc(T('projects.filter_in'))}</button>
             <button class="filter-btn" data-filter="medical">${esc(T('projects.filter_med'))}</button>
           </div>
-          <div id="proj-list">${items}</div>
+          <div id="proj-list" class="list-collapsed">${items}</div>
+          ${showToggle ? `
+          <button class="list-toggle-btn list-collapsed" id="proj-toggle">
+            <span class="toggle-icon">+</span>
+            <span class="toggle-label">${esc(T('list.show_all'))} (${total})</span>
+          </button>` : ''}
         </div>
       </section>`;
   }
@@ -160,7 +168,7 @@ const Render = (() => {
   function renderPubblicazioni(data) {
     const T = I18N.t.bind(I18N);
     const items = data.publications.map(p => `
-      <div class="pub-item reveal" data-type="${esc(p.type)}">
+      <div class="pub-item reveal collapsible-item" data-type="${esc(p.type)}">
         <div class="pub-year">${esc(p.year)}</div>
         <div>
           <div class="pub-title">${esc(p.title)}</div>
@@ -169,6 +177,9 @@ const Render = (() => {
         </div>
         <span class="pub-badge">${esc(p.type)}</span>
       </div>`).join('');
+
+    const total = data.publications.length;
+    const showToggle = total > 5;
 
     return `
       <section id="section-pubblicazioni">
@@ -184,7 +195,12 @@ const Render = (() => {
             <button class="filter-btn" data-filter="conference">${esc(T('publications.filter_co'))}</button>
             <button class="filter-btn" data-filter="workshop">${esc(T('publications.filter_wo'))}</button>
           </div>
-          <div id="pub-list">${items}</div>
+          <div id="pub-list" class="list-collapsed">${items}</div>
+          ${showToggle ? `
+          <button class="list-toggle-btn list-collapsed" id="pub-toggle">
+            <span class="toggle-icon">+</span>
+            <span class="toggle-label">${esc(T('list.show_all'))} (${total})</span>
+          </button>` : ''}
         </div>
       </section>`;
   }

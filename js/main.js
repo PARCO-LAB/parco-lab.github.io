@@ -65,6 +65,7 @@
     initReveals();
     initCounters();
     initFilters();
+    initCollapsible();
     initSmoothAnchors();
     initScrollSpy();
   }
@@ -235,6 +236,36 @@
       list.querySelectorAll("[data-type]").forEach(item => {
         item.style.display = (f === "all" || item.dataset.type === f) ? "" : "none";
       });
+    });
+  }
+
+  /* ══════════════════════════
+    COLLAPSIBLE LISTS
+  ══════════════════════════ */
+  function initCollapsible() {
+    document.addEventListener('click', e => {
+      const btn = e.target.closest('.list-toggle-btn');
+      if (!btn) return;
+
+      const listId = btn.id.replace('-toggle', '-list');
+      const list   = document.getElementById(listId);
+      if (!list) return;
+
+      const T = I18N.t.bind(I18N);
+      const isCollapsed = list.classList.contains('list-collapsed');
+      const total = list.querySelectorAll('.collapsible-item').length;
+
+      if (isCollapsed) {
+        list.classList.replace('list-collapsed', 'list-expanded');
+        btn.classList.replace('list-collapsed', 'list-expanded');
+        btn.querySelector('.toggle-label').textContent = T('list.show_less');
+      } else {
+        list.classList.replace('list-expanded', 'list-collapsed');
+        btn.classList.replace('list-expanded', 'list-collapsed');
+        btn.querySelector('.toggle-label').textContent = `${T('list.show_all')} (${total})`;
+        // scroll back to section top so user isn't stranded
+        list.closest('section')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
     });
   }
 

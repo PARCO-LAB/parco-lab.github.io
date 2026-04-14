@@ -94,6 +94,12 @@ const I18N = (() => {
         visit:    "Visit website",
       },
 
+      /* ─── LISTS ─── */
+      list: {
+        show_all:  "Show all",
+        show_less: "Show less",
+      },
+
       /* ─── FOOTER ─── */
       footer: {
         sections:    "Sections",
@@ -183,6 +189,11 @@ const I18N = (() => {
         title:    "Spin-off.",
         subtitle: "Il Computer Science Park dell'Università di Verona ospita le realtà nate dalla ricerca del Dipartimento.",
         visit:    "Visita il sito",
+      },
+
+      list: {
+        show_all:  "Mostra tutto",
+        show_less: "Comprimi",
       },
 
       footer: {
