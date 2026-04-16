@@ -432,7 +432,7 @@ const PARCO_DATA = {
   /* ─── Spin-offs ─── */
   spinoffs: [
     // { code:"HPA", name:"HPA s.r.l.", founded:"Spin-off UniVR · Computer Science Park", desc:{ en:"High-Performance Applications: high-performance software solutions derived from parallel computing research.", it:"High-Performance Applications: soluzioni software ad alte prestazioni derivate dalla ricerca sul calcolo parallelo." }, url:"https://www.di.univr.it/?ent=bibliocr&id=326&tipobc=8&lang=it" },
-    { code:"TSP", name:"The Safe Place s.r.l.", founded:"Spin-off UniVR", desc:{ en:"", it:"" }, url:""},
+    { code:"TSP", name:"The Safe Place s.r.l.", founded:"Spin-off UniVR", desc:{ en:"Preventing accidents with AI-powered hazard detection and real-time automatic interventions", it:"Prevenire gli infortuni grazie al rilevamento dei pericoli basato sull'AI e agli interventi automatici real-time." }, url:""},
   ],
 };
 
