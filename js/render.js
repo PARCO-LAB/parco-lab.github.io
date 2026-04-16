@@ -152,12 +152,16 @@ const Render = (() => {
             <button class="filter-btn" data-filter="industry">${esc(T('projects.filter_in'))}</button>
             <button class="filter-btn" data-filter="medical">${esc(T('projects.filter_med'))}</button>
           </div>
-          <div id="proj-list" class="list-collapsed">${items}</div>
-          ${showToggle ? `
-          <button class="list-toggle-btn list-collapsed" id="proj-toggle">
-            <span class="toggle-icon">+</span>
-            <span class="toggle-label">${esc(T('list.show_all'))} (${total})</span>
-          </button>` : ''}
+          <div class="collapsible-wrap list-collapsed">
+            <div id="proj-list" class="collapsible-list list-collapsed">${items}</div>
+            ${showToggle ? `
+            <div class="list-toggle-row">
+              <button class="list-toggle-btn list-collapsed" id="proj-toggle" type="button" aria-expanded="false" aria-controls="proj-list">
+                <span class="toggle-label">${esc(T('list.show_all'))} (${total})</span>
+                <span class="toggle-icon" aria-hidden="true"></span>
+              </button>
+            </div>` : ''}
+          </div>
         </div>
       </section>`;
   }
@@ -195,12 +199,16 @@ const Render = (() => {
             <button class="filter-btn" data-filter="conference">${esc(T('publications.filter_co'))}</button>
             <button class="filter-btn" data-filter="workshop">${esc(T('publications.filter_wo'))}</button>
           </div>
-          <div id="pub-list" class="list-collapsed">${items}</div>
-          ${showToggle ? `
-          <button class="list-toggle-btn list-collapsed" id="pub-toggle">
-            <span class="toggle-icon">+</span>
-            <span class="toggle-label">${esc(T('list.show_all'))} (${total})</span>
-          </button>` : ''}
+          <div class="collapsible-wrap list-collapsed">
+            <div id="pub-list" class="collapsible-list list-collapsed">${items}</div>
+            ${showToggle ? `
+            <div class="list-toggle-row">
+              <button class="list-toggle-btn list-collapsed" id="pub-toggle" type="button" aria-expanded="false" aria-controls="pub-list">
+                <span class="toggle-label">${esc(T('list.show_all'))} (${total})</span>
+                <span class="toggle-icon" aria-hidden="true"></span>
+              </button>
+            </div>` : ''}
+          </div>
         </div>
       </section>`;
   }

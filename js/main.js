@@ -231,7 +231,7 @@
       bar.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
       btn.classList.add("active");
       const f = btn.dataset.filter;
-      const list = bar.nextElementSibling;
+      const list = bar.nextElementSibling?.querySelector(".collapsible-list") || bar.nextElementSibling;
       if (!list) return;
       list.querySelectorAll("[data-type]").forEach(item => {
         item.style.display = (f === "all" || item.dataset.type === f) ? "" : "none";
@@ -247,8 +247,8 @@
       const btn = e.target.closest('.list-toggle-btn');
       if (!btn) return;
 
-      const listId = btn.id.replace('-toggle', '-list');
-      const list   = document.getElementById(listId);
+      const wrap = btn.closest('.collapsible-wrap');
+      const list = wrap?.querySelector('.collapsible-list');
       if (!list) return;
 
       const T = I18N.t.bind(I18N);
@@ -257,12 +257,17 @@
 
       if (isCollapsed) {
         list.classList.replace('list-collapsed', 'list-expanded');
+        wrap?.classList.replace('list-collapsed', 'list-expanded');
         btn.classList.replace('list-collapsed', 'list-expanded');
         btn.querySelector('.toggle-label').textContent = T('list.show_less');
+        btn.setAttribute('aria-expanded', 'true');
       } else {
         list.classList.replace('list-expanded', 'list-collapsed');
+        wrap?.classList.replace('list-expanded', 'list-collapsed');
         btn.classList.replace('list-expanded', 'list-collapsed');
         btn.querySelector('.toggle-label').textContent = `${T('list.show_all')} (${total})`;
+        btn.setAttribute('aria-expanded', 'false');
+        list.scrollTo({ top: 0, behavior: 'smooth' });
         // scroll back to section top so user isn't stranded
         list.closest('section')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
